@@ -3,6 +3,7 @@
 2. [Project Setup](#project-setup)
 3. [API tpken](#api-token)
 4. [API Reference](#api-reference)
+5. [Technologies](#technologies)
 
 # General Info
 ***
@@ -12,9 +13,11 @@ Proyecto realizado en vue en su versión 3 con composition api, consumiendo la a
 ## Project Setup
 ***
 #bash del proyecto
+```
 $ npm install
 $ cd vue-superhero-app
 $ npm run dev
+```
 
 ## API TOKEN
 ***
@@ -43,3 +46,13 @@ $ npm run dev
 | :-------- | :------- | :------------------------- |
 | `access-token` | `string` | **Required**  token proporcionado por cuenta github|
 | `id`      | `string` | **Required**. ID del artículo a buscar |
+
+## Technologies
+***
+La lista de tecnologias utilizadas en el proyecto:
+* [vue/cli](https://vuejs.org/): Version 3.4.21
+* [Axios](https://axios-http.com/): Version 1.7.1
+* [Nodejs](https://nodejs.org/): Version 20.1.4
+* [Tailwindcss](https://tailwindcss.com/): Version 3.4.3
+* [Typescript](https://www.typescriptlang.org/): Version 5.4.0
+* [Vite](https://vitejs.dev/): Version 15.2.8
