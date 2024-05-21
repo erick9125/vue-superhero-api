@@ -10,4 +10,4 @@ proyecto en vue 3 con composition api consumiendo la api SuperHero, adicional se
 #npm run dev
 
 ## Token de la API
-# la Api https://superheroapi.com/api requiere token, este se debe cambiar en el archivo de la carpeta services llamado superheroApi.ts
+#la Api https://superheroapi.com/api requiere token, este se debe cambiar en el archivo de la carpeta services llamado superheroApi.ts
