@@ -6,6 +6,7 @@ import SearchResults from './components/SearchResults.vue';
 import SuperheroDetails from './components/SuperheroDetails.vue';
 import superheroApi from './services/superheroApi';
 
+//Definición de la interfaz para un superhéroe
 interface Superhero {
   id: string;
   name: string;
@@ -23,9 +24,12 @@ export default defineComponent({
   },
 
   setup(){
+    //Estado reactivo para almacenar los resultados de la búsqueda
     const results = ref<Superhero[]>([]);
+    //Estado reactivo para almacenar el superhéroe seleccionado
     const selectedSuperHero = ref<Superhero | null>(null);
 
+    //Función paa buscar superhéroes usando la API
     const searchSuperheroes = async (name: string) => {
       try {
         const response = await superheroApi.searchSuperheroes(name);
@@ -35,6 +39,7 @@ export default defineComponent({
       }
     };
 
+    //Función para obtener detalles de un superhéroe específico
     const fetchSuperheroDetails = async(id: string) => {
       try {
         const response = await superheroApi.getSuperheroesDetails(id);
@@ -44,6 +49,7 @@ export default defineComponent({
       }
     };
 
+    //retorna los estados y funciones para ser utilizados en el template
     return {
       results,
       selectedSuperHero,

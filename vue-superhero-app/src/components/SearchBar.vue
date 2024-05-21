@@ -7,14 +7,18 @@
 <script lang="ts">
 import {defineComponent, ref} from 'vue';
 export default defineComponent({
+    //Emite un evento 'search' al componente padre
     emits: ['search'],
     setup(_, {emit}){
+        //estado reactivo para la consulta de búsqueda
         const searchQuery = ref<string>('');
 
+        //Función para emitir el evento de búsqueda
         const onSearch = () => {
             emit('search', searchQuery.value);
         };
 
+        //retnrona el estado y la función para ser utilizados en el template
         return {
             searchQuery,
             onSearch,

@@ -9,6 +9,7 @@
 <script lang="ts">
     import {defineComponent, PropType} from 'vue'; 
 
+    //Definición de la interfaz para un superhéroe
     interface Superhero {
         id: string;
         name: string;
@@ -19,6 +20,7 @@
     }
 
     export default defineComponent({
+        //Define las propiedades que el componente puede recibir
         props: {
             superhero : {
                 type: Object as PropType<Superhero>,
