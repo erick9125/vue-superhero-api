@@ -1,7 +1,7 @@
 <template>
     <div>
         <ul class="space-y-2">
-            <li v-for="superhero in results" :key="superhero.id" @click="selectSuperhero(superhero.id)" class="p-2 border border-gray-300 rounded cursor-pointer hover:bg-gray-100 bg-white text-gray-800">
+            <li v-for="superhero in superheroes" :key="superhero.id" @click="selectSuperhero(superhero.id)" class="p-2 border border-gray-300 rounded cursor-pointer hover:bg-gray-100 bg-white text-gray-800">
                 {{ superhero.name }}
             </li>
         </ul>
@@ -20,7 +20,7 @@ interface Superhero{
 export default defineComponent({
     //Define las propiedades que el componente puede recibir
     props: {
-        results : {
+        superheroes : {
             type: Array as PropType<Superhero[]>,
             required: true,
         },

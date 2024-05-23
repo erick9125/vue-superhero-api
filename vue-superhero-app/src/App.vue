@@ -34,7 +34,7 @@ export default defineComponent({
 
   setup(){
     //Estado reactivo para almacenar los resultados de la búsqueda
-    const results = ref<Superhero[]>([]);
+    const superheroes = ref<Superhero[]>([]);
     //Estado reactivo para almacenar el superhéroe seleccionado
     const selectedSuperHero = ref<Superhero | null>(null);
 
@@ -42,7 +42,7 @@ export default defineComponent({
     const searchSuperheroes = async (name: string) => {
       try {
         const response = await superheroApi.searchSuperheroes(name);
-        results.value = response.data.results;
+        superheroes.value = response.data.results;
       }catch(error) {
         console.error(error);
       }
@@ -59,13 +59,13 @@ export default defineComponent({
     };
 //Función para limpiar los datos de la busqueda
     const clearSearch = () => {
-      results.value = [];
+      superheroes.value = [];
       selectedSuperHero.value = null;
     }
 
     //retorna los estados y funciones para ser utilizados en el template
     return {
-      results,
+      superheroes,
       selectedSuperHero,
       searchSuperheroes,
       fetchSuperheroDetails,
@@ -80,7 +80,7 @@ export default defineComponent({
 <template>
   <div id="app" class="max-w-4xl mx-auto p-4 min-h-screen bg-gradient-to-r from-blue-400 to-blue-600">
       <SearchBar @search="searchSuperheroes" @clear="clearSearch"/>
-      <SearchResults :results="results" @select="fetchSuperheroDetails" />
+      <SearchResults v-if="superheroes.length > 0" :superheroes="superheroes" @select="fetchSuperheroDetails" />
       <SuperheroDetails v-if="selectedSuperHero" :superhero="selectedSuperHero"/>
   </div>
 </template>
