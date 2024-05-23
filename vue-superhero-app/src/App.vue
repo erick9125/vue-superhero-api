@@ -10,6 +10,7 @@ import superheroApi from './services/superheroApi';
 interface Superhero {
   id: string;
   name: string;
+  image: {url: string}
   biography: {
     'full-name' : string;
     'place-of-birth': string;
