@@ -9,7 +9,7 @@ export default defineConfig({
   plugins: [
     vue(),
   ],
-  base: 'https:/erick9125/github.io/vue-superhero-api/',
+  base: 'https://erick9125/github.io/vue-superhero-api/',
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
