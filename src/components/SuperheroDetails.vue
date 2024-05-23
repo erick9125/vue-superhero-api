@@ -1,9 +1,6 @@
 <template >
     <div v-if="superhero" class="p-4 border border-gray-300 rounded bg-white text-gray-800 mt-5">
         <div class="grid grid-cols-12 gap-4">
-            <div class="col-span-12 sm:col-span-12 lg:col-span-4">
-                <img :src="proxyImageUrl(superhero.image.url)" @error="imageLoadError" alt="superhero image" class="w-32 h-32 mb-4">
-            </div>
             <div class="col-span-12 sm:col-span-12 lg:col-span-8">
                 <h2 class="text-2xl font-bold mb-2">{{ superhero.name }}</h2>
                 <div class="grid grid-cols-2 gap-4">
@@ -38,7 +35,7 @@
     interface Superhero {
         id: string;
         name: string;
-        image: {url: string}
+        //image: {url: string}
         biography: {
             'full-name' : string;
             'place-of-birth': string;
