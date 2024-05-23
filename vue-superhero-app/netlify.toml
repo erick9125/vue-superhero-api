@@ -3,7 +3,7 @@
  publish= dist
 
 [[redirects]]
- from = "/api*"
+ from = "/api/*"
  to = "https://superheroapi.com/api/:splat"
  status = 200
  force = true
