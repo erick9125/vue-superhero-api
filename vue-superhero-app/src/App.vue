@@ -12,8 +12,17 @@ interface Superhero {
   name: string;
   biography: {
     'full-name' : string;
+    'place-of-birth': string;
     publisher: string;
   };
+  powerstats: {
+    intelligence: string;
+    strength: string;
+    speed: string;
+    durability: string;
+    power: string;
+    combat: string;
+  }
 }
 
 export default defineComponent({
@@ -48,13 +57,19 @@ export default defineComponent({
         console.error(error)
       }
     };
+//Función para limpiar los datos de la busqueda
+    const clearSearch = () => {
+      results.value = [];
+      selectedSuperHero.value = null;
+    }
 
     //retorna los estados y funciones para ser utilizados en el template
     return {
       results,
       selectedSuperHero,
       searchSuperheroes,
-      fetchSuperheroDetails
+      fetchSuperheroDetails,
+      clearSearch,
     }
   }
 
@@ -63,8 +78,8 @@ export default defineComponent({
 </script>
 
 <template>
-  <div id="app" class="max-w-4xl mx-auto p-4 bg-lightBlue min-h-screen">
-      <SearchBar @search="searchSuperheroes" />
+  <div id="app" class="max-w-4xl mx-auto p-4 min-h-screen bg-gradient-to-r from-blue-400 to-blue-600">
+      <SearchBar @search="searchSuperheroes" @clear="clearSearch"/>
       <SearchResults :results="results" @select="fetchSuperheroDetails" />
       <SuperheroDetails v-if="selectedSuperHero" :superhero="selectedSuperHero"/>
   </div>

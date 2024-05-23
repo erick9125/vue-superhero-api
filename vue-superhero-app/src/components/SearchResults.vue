@@ -1,7 +1,7 @@
 <template>
     <div>
         <ul class="space-y-2">
-            <li v-for="superhero in results" :key="superhero.id" @click="selectSuperhero(superhero.id)" class="p-2 border border-gray-300 rounded cursor-pointer hover:bg-gray-100">
+            <li v-for="superhero in results" :key="superhero.id" @click="selectSuperhero(superhero.id)" class="p-2 border border-gray-300 rounded cursor-pointer hover:bg-gray-100 bg-white text-gray-800">
                 {{ superhero.name }}
             </li>
         </ul>
@@ -9,7 +9,7 @@
 </template>   
 
 <script lang="ts">
-import {defineComponent, PropType} from 'vue'; 
+import {defineComponent, type PropType} from 'vue'; 
 
 //Definición de la interfaz para un superhéroe
 interface Superhero{

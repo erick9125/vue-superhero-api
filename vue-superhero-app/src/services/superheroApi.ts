@@ -2,14 +2,14 @@ import axios from 'axios';
 
 //Se genera la base URL de la API para ser consumida
 const apiClient = axios.create({
-    baseURL: 'https://superheroapi.com/api',
+    baseURL: '/api',
     headers: {
         'Content-Type' : 'application/json',
     },
 });
 
 //se reemplaza por el token de la cuenta de github que inicia sesión en la pagina superheroapi
-const accessToken = 'token de la cuenta github' 
+const accessToken = '338148107599656';
 
 export default {
     //Función para buscar superhéroes por nombre
